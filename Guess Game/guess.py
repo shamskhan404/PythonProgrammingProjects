@@ -7,13 +7,13 @@ class GuessGameGUI:
     def __init__(self):
         self.root = tk.Tk()
         self.root.geometry('350x500')
-        self.root.title('Number Guessing Game (SHAMS)')
+        self.root.title('Number Guessing Game')
 
         self.label_instruction = tk.Label(self.root, text='Select difficulty:')
         self.label_instruction.pack(pady=10)
 
         self.difficulty_var = tk.StringVar()
-        self.difficulty_var.set('10 Guesses')  # Default difficulty
+        self.difficulty_var.set('10 Guesses')  # default difficulty
         self.difficulty_menu = ttk.Combobox(self.root, textvariable=self.difficulty_var, values=['10 Guesses (Easy)', '5 Guesses (Normal)', '3 Guesses (Hard)'])
         self.difficulty_menu.pack(pady=10)
 
@@ -45,7 +45,7 @@ class GuessGameGUI:
 
         self.button_replay = tk.Button(self.root, text='Replay', command=self.replay_game)
         self.button_replay.pack(pady=10)
-        self.button_replay.pack_forget()  # Initially hide the replay button
+        self.button_replay.pack_forget()  # initially hide the replay button
 
     def initialize_game(self, max_guesses):
         self.jackpot = random.randint(1, 100)
@@ -54,7 +54,7 @@ class GuessGameGUI:
         self.is_winner = False
 
     def check_guess(self):
-        if self.is_winner:  # If the game is already won, ignore further guesses
+        if self.is_winner:  # if the game is already won, ignore further guesses
             return
 
         user_guess = int(self.entry_guess.get())
@@ -85,7 +85,7 @@ class GuessGameGUI:
 
         self.label_result.config(text=result_message)
         self.button_guess.config(state=tk.DISABLED)
-        self.button_replay.pack()  # Display the replay button
+        self.button_replay.pack()  # display the replay button
 
     def replay_game(self):
         self.label_instruction.config(text='Select difficulty:')
@@ -100,4 +100,3 @@ class GuessGameGUI:
 
 if __name__ == "__main__":
     GuessGameGUI()
-
