@@ -1,4 +1,4 @@
-# Number Guessing Game (GUI)
+# Number Guessing Game
 
 ## Project Overview
 
@@ -16,7 +16,7 @@ The program provides feedback after each guess to guide the player until the num
 * Win or loss result display
 * Option to restart the game
 
-## Difficulty Levels
+## Difficulty Levels / can be changed also 
 
 * Easy – 10 guesses
 * Normal – 5 guesses
